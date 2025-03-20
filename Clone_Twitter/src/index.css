@@ -1,0 +1,20 @@
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+:root {
+  --white: #ffffffde;
+  --gray: #242424;
+  --primary: #1d9bf0;
+  --primary_Ligth: #becdf7;
+  --primary_Text: #536471;
+  --border: #cfd9de;
+}
+
+body {
+  background: #d9d9d9;
+  min-width: 320px;
+}
