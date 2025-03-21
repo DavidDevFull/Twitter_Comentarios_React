@@ -5,6 +5,7 @@
     border-radius: 3px;
     padding: 4px;
     resize: vertical;
+    padding-left: .5rem;
 }
 .input:focus{
     outline: none;
