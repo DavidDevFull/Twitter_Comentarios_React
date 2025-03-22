@@ -1,4 +1,4 @@
-import style from './Twitter.module.css'
+import styles from './TweetAplication.modules.css';
 export default function Tweet(props){
     return(
         <div className={styles.tweetContainer}> 
@@ -8,11 +8,9 @@ export default function Tweet(props){
                 <span className={styles.userUserName}>@DeivinDeveloper🍀</span>
                 <span className={styles.date}>Hoje</span>
             </div>
-            <div >
-
+            <div className={styles.tweetContainer}>
+             <li>{props.children}</li>
             </div>
-            <li>{props.children}</li>
         </div>
-
     )
 }

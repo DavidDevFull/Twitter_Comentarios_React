@@ -1,47 +1,52 @@
-import { useState} from 'react';
+import { useState } from "react";
 import TextInput from "../TextInput";
-import Tweet from '../Twitter';
+import TweetAplication from "../TweetAplication";
 
 export default function Index() {
-    const [text, setText] = useState('');
-    const [tweetList, setTweetList] = useState([]);
-    const maxLength = 125;
-    
-    function onTextChange(event){
-        const text = event.target.value;
-        if (text.length <= maxLength){
-            setText(text);
-        }
+  const [text, setText] = useState("");
+  const [tweetList, setTweetList] = useState([]);
+  const maxLength = 125;
+
+  function onTextChange(event) {
+    const text = event.target.value;
+    if (text.length <= maxLength) {
+      setText(text);
     }
-    
-    function sendTweet(){
-        setTweetList([...tweetList, text]);
-    }
-    
+  }
+
+  function sendTweet() {
+    setTweetList([...tweetList, text]);
+  }
+
   return (
     <div>
       <h1>Tweet</h1>
       <div>
         <img src="" />
-        <TextInput 
-            placeholder={'O que está rolando?'} // Testo padrão que irá ser ensirido no textBox
-            maxLength={maxLength} value={text} 
-            onChange={onTextChange} 
+        <TextInput
+          placeholder={"O que está rolando?"} // Testo padrão que irá ser ensirido no textBox
+          maxLength={maxLength}
+          value={text}
+          onChange={onTextChange}
         />
-    </div>
+      </div>
 
-    <div>
-        <div>{text.length} / {maxLength}</div>
-        <button onClick={sendTweet}>📨Twittar</button>      
-    </div>
+      <div>
+        <div>
+          {text.length} / {maxLength}
+        </div>
+        <button onClick={sendTweet}>📨Twittar</button>
+      </div>
 
-        <ul>
-            {tweetList.map(tweet => {
-                return(
-                    <li><Tweet children={tweet}/></li>
-                )
-            })}
-        </ul>
+      <ul>
+        {tweetList.map((tweet) => {
+          return (
+            <li>
+              <TweetAplication children={tweet} />
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }
